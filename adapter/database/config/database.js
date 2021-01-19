@@ -5,8 +5,8 @@ module.exports = {
     password: 'admin',
     database: 'sip',
     define: {
-      timestamps: true,
+      timestamps: false,
       underscored: true
     },
-    logging: false
+    dialectOptions: {}
   }
