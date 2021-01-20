@@ -1,6 +1,6 @@
-const service = require("../../../core/service/ProductService");
+import service from '../../../core/service/ProductService.js';
 
-module.exports = {
+export default {
     async post(req, res) {
         const product = req.body;
         const created_user = await service.create(product);

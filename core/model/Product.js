@@ -1,14 +1,14 @@
-const { Model, DataTypes } = require('sequelize')
+import type from 'sequelize'
 
-class Product extends Model {
+class Product extends type.Model {
   static init (sequelize) {
     super.init({
-        product_id: {type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true},
-        image: DataTypes.STRING,
-        name: DataTypes.STRING,
-        value: DataTypes.DOUBLE,
+        product_id: {type: type.DataTypes.INTEGER, primaryKey: true, autoIncrement: true},
+        image: type.DataTypes.STRING,
+        name: type.DataTypes.STRING,
+        value: type.DataTypes.DOUBLE,
     }, {sequelize})
   }
 }
 
-module.exports = Product
+export default Product

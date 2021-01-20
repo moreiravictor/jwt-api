@@ -1,12 +1,12 @@
-const Sequelize = require('sequelize');
-const database_config = require('./config/database');
+import Sequelize from 'sequelize';
+import database_config from './config/database.js';
 
-const User = require('../../core/model/User');
-const Product = require('../../core/model/Product');
+import User from '../../core/model/User.js';
+import Product from '../../core/model/Product.js';
 
 const connection = new Sequelize(database_config);
 
 User.init(connection);
 Product.init(connection);
 
-module.exports = connection;
+export default connection;

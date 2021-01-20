@@ -1,9 +1,9 @@
-const UserRepository = require('../repository/UserRepository');
+import repository from '../repository/UserRepository.js';
 
 async function loginUSer(username, password) {
-    return await UserRepository.loginQuery(username, password);
+    return await repository.loginQuery(username, password);
 } 
 
-module.exports = {
+export default {
     loginUSer
 }

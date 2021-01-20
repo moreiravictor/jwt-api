@@ -1,5 +1,3 @@
 const SECRET = 'sipdigital';
 
-module.exports = {
-    SECRET
-}
+export default SECRET

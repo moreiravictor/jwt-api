@@ -1,13 +1,13 @@
-const { Model, DataTypes } = require('sequelize')
+import type from 'sequelize';
 
-class User extends Model {
+class User extends type.Model {
   static init(sequelize) {
     super.init({
-        user_id: {type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true},
-        username: DataTypes.STRING,
-        password: DataTypes.STRING,
+        user_id: {type: type.DataTypes.INTEGER, primaryKey: true, autoIncrement: true},
+        username: type.DataTypes.STRING,
+        password: type.DataTypes.STRING,
     }, {sequelize})
   }
 }
 
-module.exports = User;
+export default User;

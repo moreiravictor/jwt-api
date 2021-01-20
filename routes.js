@@ -1,16 +1,15 @@
-const express = require('express');
-const routes = express.Router();
-const authService = require('./core/service/AuthService');
-
-const loginController = require('./adapter/http/controller/LoginController');
-const productController = require('./adapter/http/controller/ProductController');
+import { Router } from 'express';
+import authService from './core/service/AuthService.js';
+import loginController from './adapter/http/controller/LoginController.js';
+import productController from './adapter/http/controller/ProductController.js';
+const routes = Router();
 
 routes.post('/login', loginController.login);
-routes.post('/product', authService.verify, productController.post);
+routes.post('/product', authService.authenticate, productController.post);
 
-routes.get('/product/:product_id', authService.verify, productController.get);
-routes.get('/product', authService.verify, productController.getAll);
+routes.get('/product/:product_id', authService.authenticate, productController.get);
+routes.get('/product', authService.authenticate, productController.getAll);
 
-routes.patch('/product/:product_id', authService.verify, productController.patch);
+routes.patch('/product/:product_id', authService.authenticate, productController.patch);
 
-module.exports = routes;
+export default routes;

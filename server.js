@@ -1,9 +1,9 @@
-const express = require('express');
-const routes = require('./routes');
-require('./adapter/database/index');
+import express, { json } from 'express';
+import routes from './routes.js';
+import './adapter/database/index.js';
 const app = express();
 
-app.use(express.json());
+app.use(json());
 app.use(routes);
 
 app.listen(8080);

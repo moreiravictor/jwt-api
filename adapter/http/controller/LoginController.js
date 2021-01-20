@@ -1,7 +1,7 @@
-const authService = require('../../../core/service/AuthService'); 
-const loginService = require('../../../core/service/LoginService');
+import authService from '../../../core/service/AuthService.js'; 
+import loginService from '../../../core/service/LoginService.js';
 
-module.exports = {
+export default  {
     async login(req, res) {
         const {username, password} = req.body;
         const user = await loginService.loginUSer(username, password);

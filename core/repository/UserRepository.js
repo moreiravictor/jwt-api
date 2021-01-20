@@ -1,9 +1,9 @@
-const User = require("../model/User");
+import user from "../model/User.js";
 
 async function loginQuery(username, password) {
-    return await User.findOne({where: {username: username, password: password}});
+    return await user.findOne({where: {username: username, password: password}});
 }
 
-module.exports = {
+export default {
     loginQuery
 }
