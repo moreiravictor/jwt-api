@@ -8,7 +8,7 @@
 ```
 
 
-#### Start the Mysql service: 
+#### Start the Postgres service: 
 Then, create a user. If you don't want to tweak up the config files, create a user named 'postgres' and use de password 'admin'.
 
 #### Go to the root folder and run the DB Migrations.
